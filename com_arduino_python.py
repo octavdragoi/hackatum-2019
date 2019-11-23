@@ -10,7 +10,8 @@ import serial
 
 """Opening of the serial port"""
 try:
-    arduino = serial.Serial("/dev/cu.usbserial-A601WTJC",timeout=1,baudrate=38400)
+    #arduino = serial.Serial("/dev/cu.usbserial-A601WTJC",timeout=1,baudrate=38400)
+    arduino = serial.Serial("/dev/cu.HC-05-DevB",timeout=1,baudrate=38400)
 except:
     print('Please check the port')
 
@@ -19,7 +20,7 @@ rawdata=[]
 count=0
 
 """Receiving data and storing it in a list"""
-while count<500:
+while count<100:
     rawdata.append(str(arduino.readline()))
     count+=1
 print(rawdata)
