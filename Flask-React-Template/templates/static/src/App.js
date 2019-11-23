@@ -1,15 +1,17 @@
-import React, {Component} from 'react'
-import Test from "./components/Test";
+import React from 'react';
+import Content from "./components/Content";
+import classNames from 'classnames';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <h1>My React App</h1>
-        <Test/>
+const App = () => {
+  const [screen, setScreen] = React.useState('welcome');
+
+  return (
+    <div className={classNames('screen', screen)}>
+      <div className="screen-content">
+        <Content screen={screen} setScreen={setScreen}/>
       </div>
-    )
-  }
-}
+    </div>
+  )
+};
 
 export default App

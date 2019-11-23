@@ -1,5 +1,6 @@
 import React from 'react'
 import * as ApiClient from "../ApiClient";
+import Visualization from "./Visualization";
 
 const Test = () => {
   const [text, setText] = React.useState('');
@@ -9,6 +10,7 @@ const Test = () => {
   return (
     <div>
       {text}
+      <Visualization value={text}/>
     </div>
   )
 };
