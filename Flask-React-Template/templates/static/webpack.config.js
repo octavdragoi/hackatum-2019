@@ -22,5 +22,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./index.html"
         })
-    ]
-}
+    ],
+    target: 'web'
+};
