@@ -1,10 +1,11 @@
 import React from 'react'
+import Logo from "./Logo";
 
 const WelcomeScreen = ({setScreen}) => {
   return (
     <React.Fragment>
       <div className="app-icon">
-        <img src="/img/app_icon.svg"/>
+        <Logo/>
       </div>
       <div className="panel">
         <div className="title">

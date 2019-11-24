@@ -21,6 +21,7 @@
 
 body {
   background-color: #000;
+  background-attachment: fixed;
   background-image: url("/public/img/bg.jpg");
   background-size: cover;
   background-position: center;
@@ -36,6 +37,8 @@ body {
 .screen {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .screen.welcome .code-input {
@@ -52,7 +55,6 @@ body {
 
 .screen-content * {
   margin: 0 auto;
-  width: fit-content;
   text-align: center;
 }
 
@@ -89,7 +91,7 @@ body {
 }
 
 .button {
-  color: #460a40;
+  color: #000;
   background: #FFFFFF;
   width: 90%;
   padding: 15px;
@@ -140,7 +142,7 @@ body {
 .ex-deadlift {
   display: flex;
   flex-direction: column;
-  background: #FFF;
+  background: rgba(255, 255, 255, .6);
   width: 100%;
   height: 100%;
 }
@@ -185,11 +187,101 @@ body {
   margin-bottom: 25px;
 }
 
-/* TODO remove this placeholder */
-.app-icon {
-  border: 1px solid white;
-}
-
 .divider {
   flex: 1;
+}
+
+.history-graph {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.screen.history .screen-content {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.navigation {
+  display: flex;
+  height: 48px;
+  background: #460a40;
+}
+
+.navigation.bad {
+  background: #e83b36;
+}
+
+.navigation > div {
+  flex: 1;
+  text-align: center;
+}
+
+.navigation img {
+  height: 100%;
+}
+
+.screen.end .panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo > img {
+  height: 100%;
+}
+
+.carousel .control-dots {
+  padding-inline-start: 0;
+}
+
+.history-comparison {
+  display: flex;
+  margin: 10px;
+}
+
+.history-comparison > div {
+  height: 150px;
+  background: #fff;
+  flex: 1;
+}
+
+.history-comparison > div:not(:last-child) {
+  margin-right: 10px;
+}
+
+.tile > .weight {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.history-comparison .tile {
+  position: relative;
+}
+
+.history-comparison .tile .weight {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  font-size: 1.25em;
+}
+
+.history-comparison .tile .icon {
+  flex: 1;
+}
+
+.history-comparison .tile .icon > img {
+  height: 100%;
+}
+
+.history-comparison .tile .count {
+  font-size: 2em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 10px;
+  background: #460a40;
+  border-radius: 24px;
+  color: #fff;
+}
+
+.history-comparison .description {
+  font-style: italic;
 }
