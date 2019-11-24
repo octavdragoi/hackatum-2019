@@ -6,7 +6,7 @@ import {ApiClient} from "../ApiClient";
 
 IgrRadialGaugeModule.register();
 
-function updateStatus(currentStatus, plt) {
+function updateStatus(currentStatus, plt, it) {
   switch (currentStatus) {
     case 'good':
       if (plt < it[1][0] || plt > it[3][1]) {
@@ -23,6 +23,14 @@ function updateStatus(currentStatus, plt) {
   }
 }
 
+function doSwitch(plt, it) {
+  if (plt > it[2][0] + 9 && plt < it[2][1] - 9) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const chartStyle = {
   height: 100,
 }
@@ -30,14 +38,15 @@ const chartStyle = {
 const arcsLength = [[0.3, 0.15, 0.1, 0.15, 0.3], [0.1, 0.2, 0.1, 0.3, 0.3]]
 const elements = [[[-90, -40], [-40, -10], [-10, 10], [10, 40], [40, 90]],
   [[-90, -80], [-80, -60], [-60, -40], [-40, -10], [-10, 90]]]
-const it = elements[1];
 
 export class Gauge extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
+      curr_it: 1,
+      counter: 0
     }
   }
 
@@ -45,7 +54,7 @@ export class Gauge extends React.Component {
     this.setState({
       apiClient: new ApiClient(80, (result) => {
         this.setState({text: result});
-        this.props.setStatus(updateStatus(this.props.status, result.gyro.plt));
+        this.props.setStatus(updateStatus(this.props.status, result.gyro.plt, elements[this.state.curr_it]));
       })
     });
   }
@@ -56,9 +65,16 @@ export class Gauge extends React.Component {
   }
 
   render() {
+    const it = elements[this.state.curr_it];
     if (this.state.text) {
+      if (doSwitch(this.state.text.gyro.plt, it)) {
+        if (this.state.curr_it == 0) {
+          this.state.counter = this.state.counter + 1;
+        }
+        this.state.curr_it = 1 - this.state.curr_it
+      }
       return (
-        <div className="gauge">
+        <React.Fragment><div className="gauge">
           <IgrRadialGauge
             scaleStartAngle={180}
             scaleEndAngle={0}
@@ -101,7 +117,7 @@ export class Gauge extends React.Component {
                                  startValue={it[3][0]} endValue={it[3][1]} brush={"yellow"}/>
             <IgrRadialGaugeRange name={"5"}
                                  startValue={it[4][0]} endValue={it[4][1]} brush={"red"}/>
-          </IgrRadialGauge></div>
+          </IgrRadialGauge></div><div className="count">{this.state.counter}</div></React.Fragment>
       )
     }
     return (<div></div>);

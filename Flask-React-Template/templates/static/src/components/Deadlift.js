@@ -4,7 +4,7 @@ import {Gauge} from "./Gauge";
 
 const Deadlift = ({status, setStatus, setScreen}) => {
   const message = status === 'good' ? <div className="message-prim">Keep it up!</div> : (<React.Fragment>
-    <div className="message-prim">Your posture is off.</div>
+    <div className="message-prim">Keep going...</div>
     <div className="message-sec">Do not forget to straighten your lower back!</div>
   </React.Fragment>);
 

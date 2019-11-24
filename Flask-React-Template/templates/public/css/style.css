@@ -278,4 +278,5 @@ body {
 
 .gauge {
   transform: translateX(-50%);
+  flex: 1;
 }
