@@ -248,10 +248,6 @@ body {
   margin-right: 10px;
 }
 
-.tile > .weight {
-  background: rgba(0, 0, 0, 0.05);
-}
-
 .history-comparison .tile {
   position: relative;
 }
