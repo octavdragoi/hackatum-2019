@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Test from "./components/Test";
+import {Test} from "./components/Test";
 
 class App extends Component {
   constructor(props) {

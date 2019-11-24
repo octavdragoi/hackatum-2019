@@ -7,8 +7,8 @@ inst_com = com.Com()
 @app_blueprint.route('/')
 @app_blueprint.route('/app')
 def index():
-	inst_com.arduino.flushInput()
-	inst_com.arduino.flushOutput()
+	#inst_com.arduino.flushInput()
+	#inst_com.arduino.flushOutput()
 	return render_template("index.html")
 
 @app_blueprint.route('/api')

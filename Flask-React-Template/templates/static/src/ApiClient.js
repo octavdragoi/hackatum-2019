@@ -1,5 +1,19 @@
 const https = require('https');
 
+export class ApiClient {
+  timer;
+
+  constructor(interval, callback) {
+    this.timer = setInterval(test, interval, callback);
+  }
+
+  stop() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+  }
+}
+
 export function test(callback) {
   https.get('/api', (resp) => {
     let data = '';
