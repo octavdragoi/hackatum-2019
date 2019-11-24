@@ -28,12 +28,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.box {
-  height: 100px;
-  width: 100px;
-  background: black;
-}
-
 .screen {
   width: 100%;
   height: 100%;
