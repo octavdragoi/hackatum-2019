@@ -3,10 +3,9 @@ import Content from "./components/Content";
 import classNames from 'classnames';
 import Navigation from "./components/Navigation";
 
-const status = 'good'; // TODO use actual value
-
 const App = () => {
   const [screen, setScreen] = React.useState('welcome');
+  const [status, setStatus] = React.useState('good');
 
   let navVisible;
   switch (screen) {
@@ -40,7 +39,7 @@ const App = () => {
     <div className={classNames('screen', screen)}>
       {navVisible && <Navigation home={navHome} prev={navPrev} status={status} setScreen={setScreen}/>}
       <div className="screen-content">
-        <Content screen={screen} setScreen={setScreen} status={status}/>
+        <Content screen={screen} setScreen={setScreen} status={status} setStatus={setStatus}/>
       </div>
     </div>
   )

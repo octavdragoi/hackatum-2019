@@ -275,3 +275,7 @@ body {
 .history-comparison .description {
   font-style: italic;
 }
+
+.gauge {
+  transform: translateX(-50%);
+}
