@@ -17,13 +17,20 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
+    "d3": "^5.14.2",
+    "igniteui-react-core": "^16.11.5",
+    "igniteui-react-gauges": "^16.11.5",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-gauge-chart": "^0.2.4"
   }
 }

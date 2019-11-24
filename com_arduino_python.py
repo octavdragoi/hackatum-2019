@@ -10,15 +10,15 @@ import serial
 
 """Opening of the serial port"""
 try:
-    #arduino = serial.Serial("/dev/cu.usbserial-A601WTJC",timeout=1,baudrate=38400)
-    arduino = serial.Serial("/dev/cu.HC-05-DevB",timeout=1,baudrate=9600)
+    # arduino = serial.Serial("/dev/cu.usbserial-A601WTJC",timeout=1,baudrate=9600)
+    arduino = serial.Serial("/dev/cu.HC-05-DevB",timeout=1,baudrate=38400)
 except:
     print('Please check the port')
-
-"""Initialising variables""" 
-rawdata=[]
-count=0
+    exit(1)
 
 """Receiving data and storing it in a list"""
 while True:
-    print(arduino.readline())
+    try:
+        print(arduino.readline())
+    except Exception as e:
+        print (e)

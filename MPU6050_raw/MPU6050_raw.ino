@@ -44,9 +44,11 @@ void setup() {
     // Serial.println("Initializing I2C devices...");
     accelgyro.initialize();
     // use the code below to change accel/gyro offset values
-    /*
+    
     Serial.println("Updating internal sensor offsets...");
     // -76	-2359	1688	0	0	0
+    // -45.6,-167.67,90.38
+    // 16757.84,-544.84,-1524.04
     Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
     Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
     Serial.print(accelgyro.getZAccelOffset()); Serial.print("\t"); // 1688
@@ -54,9 +56,12 @@ void setup() {
     Serial.print(accelgyro.getYGyroOffset()); Serial.print("\t"); // 0
     Serial.print(accelgyro.getZGyroOffset()); Serial.print("\t"); // 0
     Serial.print("\n");
-    accelgyro.setXGyroOffset(220);
-    accelgyro.setYGyroOffset(76);
-    accelgyro.setZGyroOffset(-85);
+    accelgyro.setXGyroOffset(46);
+    accelgyro.setYGyroOffset(168);
+    accelgyro.setZGyroOffset(-90);
+    accelgyro.setXAccelOffset(-16758);
+    accelgyro.setYAccelOffset(545);
+    accelgyro.setZAccelOffset(1524);
     Serial.print(accelgyro.getXAccelOffset()); Serial.print("\t"); // -76
     Serial.print(accelgyro.getYAccelOffset()); Serial.print("\t"); // -2359
     Serial.print(accelgyro.getZAccelOffset()); Serial.print("\t"); // 1688
@@ -64,7 +69,6 @@ void setup() {
     Serial.print(accelgyro.getYGyroOffset()); Serial.print("\t"); // 0
     Serial.print(accelgyro.getZGyroOffset()); Serial.print("\t"); // 0
     Serial.print("\n");
-    */
 
     // configure Arduino LED for
     pinMode(LED_PIN, OUTPUT);
