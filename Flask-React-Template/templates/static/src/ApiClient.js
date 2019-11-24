@@ -15,7 +15,7 @@ export class ApiClient {
 }
 
 export function test(callback) {
-  https.get('/api', (resp) => {
+  https.get('/api_hack', (resp) => {
     let data = '';
 
     // A chunk of data has been recieved.
