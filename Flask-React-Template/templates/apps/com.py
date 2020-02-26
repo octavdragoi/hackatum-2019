@@ -8,7 +8,8 @@ class Com():
   def __init__(self, len_w = 2, width_w = 3, poll_time = 0):
     try:
       #self.arduino = serial.Serial("/dev/cu.usbserial-A601WTJC",timeout=1,baudrate=9600)
-      self.arduino = serial.Serial("/dev/cu.HC-05-DevB",timeout=1,baudrate=38400)
+      self.arduino = serial.Serial("/dev/rfcomm0",timeout=1,baudrate=38400)
+      # see how at https://wiki.archlinux.org/index.php/Bluetooth
       self.arduino.flushInput()
       self.arduino.flushOutput()
     except:

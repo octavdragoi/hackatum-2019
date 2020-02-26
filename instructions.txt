@@ -1,0 +1,11 @@
+make sure the bluetooth is connected to the serial port, after device is paired
+rfcomm bind rfcomm0 98:D3:81:FD:63:8E
+
+run the python script that pulls the data
+Flask-React-Template/templates/apps: sudo python test_api.py
+
+run the flask server
+Flask-React-Template: python run.py
+
+run the react server
+Flask-React-Template/templates/static: npm run watch
